@@ -1,0 +1,90 @@
+@import "https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap";
+@import "//db.onlinewebfonts.com/c/978e3845b045b2e6a058988930c64d27?family=Cochin";
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*=== HEADER ===*/
+.image-logo img {
+    margin-left: 16%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.links {
+    position: absolute;
+    top: 25px;
+    right: 800px;
+}
+
+.links a {
+    padding: 0 16px;
+    font-size: 16px;
+    color: #111111;
+    text-decoration: none;
+}
+
+/*=== SECTION PRESENTATION ===*/
+.presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #FBDFDB;
+    border-radius: 30px;
+    width: 940px;
+    height: 366px;
+    margin-top: 10px;
+    margin-left: 15%;
+    position: relative;
+}
+
+.content-presentation {
+    width: 316px;
+    position: absolute;
+    left: 50px;
+    bottom: 40%;
+}
+
+.content-presentation h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.content-presentation p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.image-presentation img{
+    width: 216px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+
+}
+
+/*=== FOOTER ===*/
+footer .rights-reserved {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #EEEEEE;
+    height: 62px;
+}
+
+.rights-reserved p {
+    font-size: 14px;
+    font-family: 'Roboto';
+    color: #999999;
+    text-align: center;
+    padding-top: 3.5vh;
+}
