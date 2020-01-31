@@ -13,7 +13,7 @@ body {
 
 /*=== HEADER ===*/
 .image-logo img {
-    margin-left: 16%;
+    margin-left: 15%;
     margin-top: 20px;
     position: relative;
 }
@@ -73,12 +73,58 @@ body {
 
 }
 
+/*=== CARDS ===*/
+.title-recipes {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: bold;
+    color: #111111;
+    margin-top: 50px;
+    margin-left: 15.5%;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 940px;
+    margin-left: 15%;
+}
+
+.card {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.card-image img {
+    width: 300px;
+    height: 140px;
+    border-radius: 15px;
+}
+
+.card-content {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    color: #111111;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #777777;
+}
+
 /*=== FOOTER ===*/
 footer .rights-reserved {
     display: grid;
     grid-template-columns: 1fr;
     background: #EEEEEE;
     height: 62px;
+    margin-top: 50px;
 }
 
 .rights-reserved p {
@@ -87,4 +133,24 @@ footer .rights-reserved {
     color: #999999;
     text-align: center;
     padding-top: 3.5vh;
+}
+
+/*=== COMPANY CONTENT ===*/
+.company {
+    width: 940px;
+    margin-left: 15%;
+    margin-top: 50px;
+}
+
+.company-content h2{
+    font-size: 24px;
+    color: #111111;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.company-content p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
 }
