@@ -177,3 +177,57 @@ footer .rights-reserved {
     margin-right: 10%;
     border-radius: 26px;
 }
+
+/*=== RECIPE ===*/
+
+.recipe {
+   position: relative;
+}
+
+.image-recipe img{
+    width: 940px;
+    height: 280px;
+    margin: 5% 15% 4% 15%;
+    border-radius: 15px;
+}
+
+.info-recipe h2{
+    font-size: 36px;
+    color: #111111;
+}
+
+.info-recipe p{
+    font-size: 20px;
+    color: #777777;
+}
+
+.content-recipe {
+    text-align: left;
+}
+
+.content-recipe h2{
+    font-size: 24px;
+    color: #111111;
+    margin-left: 15%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.content-recipe ul {
+    margin-left: 18%;
+    margin-right: 10%;
+}
+
+.content-recipe li {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.content-recipe p{
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    margin-left: 16%;
+    margin-right: 10%;
+}

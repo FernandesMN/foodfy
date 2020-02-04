@@ -11,7 +11,8 @@ server.set("view engine", "njk");
 
 nunjucks.configure("views", {
     express: server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 });
 
 server.get("/", function(req,res) {
@@ -24,6 +25,20 @@ server.get("/about", function(req,res) {
 
 server.get("/recipes", function(req,res) {
     return res.render("recipes", {recipes});
+});
+
+server.get("/recipe", function(req,res) {
+    const id = req.query.id;
+
+    const recipe = recipes.find(function(recipe) {
+        return id == recipe.id;
+    });
+
+    if(!recipe) {
+        return res.send('Not found');
+    }
+
+    return res.render("recipe", {recipe});
 });
 
 server.use(function(req,res) {
