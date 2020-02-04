@@ -149,69 +149,6 @@ body {
     margin-top: 50px;
 }
 
-/*=== MODAL ===*/
-.modal-overlay {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.modal {
-    background: #ffffff;
-    width: 660px;
-    height: 413px;
-    position: relative;
-    margin: 8% 25%;
-    border-radius: 16px;
-
-}
-
-.modal .close-modal a{
-    color: gray;
-    font-size: 16px;
-    cursor: pointer;
-    position: absolute;
-    right: 42%;
-    top: 80%;
-}
-
-/*=== MODAL ACTIVE ===*/
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-image {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.modal-content {
-    text-align: center;
-    padding-top: 20px;
-}
-
-.modal-image img{
-    width: 600px;
-    height: 200px;
-    border-radius: 15px;
-}
-
-.modal-content h2 {
-    font-size: 24px;
-    color: #111111;
-}
-
-.modal-content p {
-    font-size: 18px;
-    color: #777777;
-    padding-top: 10px;
-}
-
 /*=== FOOTER ===*/
 footer .rights-reserved {
     display: grid;
@@ -227,4 +164,16 @@ footer .rights-reserved {
     color: #999999;
     text-align: center;
     padding-top: 3.5vh;
+}
+
+/*=== PAGE NOT FOUND ===*/
+.title-alert {
+    text-align: center;
+    margin-top: 20%;
+    font-size: 50px;
+    border: 1px solid gray;
+    padding: 2px 6px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 26px;
 }
