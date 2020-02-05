@@ -3,7 +3,7 @@ const nunjucks = require('nunjucks');
 
 const server = express();
 
-const recipes = require('./data');
+const receipts = require('./data');
 
 server.use(express.static('public'));
 
@@ -16,21 +16,28 @@ nunjucks.configure("views", {
 });
 
 server.get("/", function(req,res) {
-    return res.render("home", {recipes});
+    return res.render("home", {receipts});
 });
 
 server.get("/about", function(req,res) {
     return res.render("about");
 });
 
-server.get("/recipes", function(req,res) {
-    return res.render("recipes", {recipes});
+server.get("/receipts", function(req,res) {
+    return res.render("receipts", {receipts});
 });
+
+// server.get("/recipes/:index", function(req,res){
+//     const recipeIndex = req.params.index;
+//     console.log(receipts[recipeIndex]);
+
+//     return res.render("recipe", {recipe: receipts[recipeIndex]});
+// });
 
 server.get("/recipe", function(req,res) {
     const id = req.query.id;
 
-    const recipe = recipes.find(function(recipe) {
+    const recipe = receipts.find(function(recipe) {
         return id == recipe.id;
     });
 

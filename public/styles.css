@@ -101,6 +101,9 @@ body {
     width: 300px;
     height: 140px;
     border-radius: 15px;
+}
+
+.card-image.active img {
     cursor: pointer;
 }
 
@@ -201,33 +204,51 @@ footer .rights-reserved {
     color: #777777;
 }
 
-.content-recipe {
+.ingredient-recipe, .preparation-recipe, .additional-information-recipe {
     text-align: left;
 }
 
-.content-recipe h2{
+.ingredient-recipe h2, .preparation-recipe h2, .additional-information-recipe h2{
     font-size: 24px;
     color: #111111;
     margin-left: 15%;
     margin-top: 20px;
-    margin-bottom: 15px;
 }
 
-.content-recipe ul {
+.ingredient-recipe ul, .preparation-recipe ul {
     margin-left: 18%;
     margin-right: 10%;
+    visibility: hidden;
 }
 
-.content-recipe li {
+.ingredient-recipe li, .preparation-recipe li {
     font-size: 18px;
     color: #444444;
     line-height: 28px;
 }
 
-.content-recipe p{
+.additional-information-recipe p{
     font-size: 18px;
     color: #444444;
     line-height: 28px;
     margin-left: 16%;
     margin-right: 10%;
+    visibility: hidden;
+}
+
+.ingredient-recipe.active ul, .preparation-recipe.active ul{
+    visibility: visible;
+}
+
+.additional-information-recipe.active p{
+    visibility: visible;
+}
+
+.to_hide-ingredient, .to_hide-preparation, .to_hide-information {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 2%;
+    margin-top: 0;
+    cursor: pointer;
+    text-decoration: none;
 }
