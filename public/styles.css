@@ -115,7 +115,6 @@ body {
 .card-content h2 {
     font-size: 18px;
     color: #111111;
-    cursor: pointer;
 }
 
 .card-content p {
@@ -150,6 +149,10 @@ body {
     width: 940px;
     margin-left: 15%;
     margin-top: 50px;
+}
+
+.cards-recipe h2 {
+    cursor: pointer;
 }
 
 /*=== FOOTER ===*/
