@@ -1,35 +1,22 @@
-{% extends "layout.njk" %}
+{% extends "admin/layout.njk" %}
 
 {% block head %}
     <title>Foodfy</title>
 {% endblock %}
 
 {% block content %}
-    <section class="presentation">
-        <div class="content-presentation">
-            <h2>As melhores receitas</h2>
-
-            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais
-                do mundo inteiro.
-            </p>
-        </div>
-
-        <div class="image-presentation">
-            <img src="./assets/chef.png" alt="chef">
-        </div>
-    </section>
-
-    <h2 class="title-recipes">Mais acessadas</h2>
-    <section class="cards">
+    <h2 class="title-recipes">Gerenciar receitas</h2>
+    <section class="cards-admin">
         {% for recipe in receipts %}
-            <div class="card" id="burger.png">
-                <div class="card-image">
+            <div class="card-admin" id="burger.png">
+                <div class="card-image-admin">
                     <img src="{{recipe.image}}" alt="image of {{recipe.title}}">
                 </div>
 
-                <div class="card-content">
+                <div class="card-content-admin">
                     <h2>{{recipe.title}}</h2>
                     <p>por {{recipe.author}}</p>
+                    <a href="/admin/receipts/{{recipe.id}}">Visualizar</a>
                 </div>
             </div>
         {% endfor %}

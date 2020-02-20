@@ -107,17 +107,17 @@ body {
     cursor: pointer;
 }
 
-.card-content {
+.card-content, .card-content-admin {
     text-align: left;
     margin-left: 10px;
 }
 
-.card-content h2 {
+.card-content h2, .card-content-admin h2 {
     font-size: 18px;
     color: #111111;
 }
 
-.card-content p {
+.card-content p, .card-content-admin p {
     font-size: 14px;
     color: #777777;
 }
@@ -190,7 +190,7 @@ footer .rights-reserved {
    position: relative;
 }
 
-.image-recipe img{
+.image-recipe img, .image-recipe-admin img{
     width: 940px;
     height: 280px;
     margin: 5% 15% 4% 15%;
@@ -254,4 +254,69 @@ footer .rights-reserved {
     margin-top: 0;
     cursor: pointer;
     text-decoration: none;
+}
+
+/*========== ADMIN ==========*/
+
+/*---header---*/
+.header-admin {
+    background-color: #111111;
+    padding-bottom: 12px;
+}
+
+/*---card---*/
+.cards-admin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 940px;
+    margin-left: 16%;
+}
+
+.card-admin {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.card-image-admin img{
+    width: 172px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.card-content-admin a {
+    text-decoration: none;
+    color: #6558C3;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/*---recipe---*/
+.image-recipe-admin img{
+    margin-top: 1%;
+}
+
+.edit-admin {
+    display: grid;
+    grid-template-columns: 500px 430px;
+    margin-top: 2%;
+    margin-left: 16%;
+    margin-bottom: 0;
+}
+
+.edit-admin h2 {
+    text-align: left;
+    margin-right: 8%;
+}
+
+.card .edit-admin a {
+    padding: 12px 16px;
+    background: #6558C3;
+    color: white;
+    margin-left: 40%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
 }

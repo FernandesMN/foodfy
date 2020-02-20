@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        {% block head_body %}
+            <header class="header-admin">
+                <div class="image-logo">
+                    <a href="/admin/receipts"><img src="/assets/logo-white.png" alt="logo"></a>
+                </div>
+            </header>
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+    </body>
+</html>

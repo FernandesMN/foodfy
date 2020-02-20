@@ -17,8 +17,4 @@ nunjucks.configure("views", {
     noCache: true
 });
 
-server.use(function(req,res) {
-    return res.status(404).render("not-found");
-});
-
 server.listen(5000);

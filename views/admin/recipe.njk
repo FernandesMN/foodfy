@@ -1,4 +1,4 @@
-{% extends "layout.njk" %}
+{% extends "admin/layout.njk" %}
 
 {% block head %}
     <title>Foodfy - receita</title>
@@ -7,7 +7,12 @@
 {% block content %}
     <section class="recipe">
         <div class="card" id="{{recipe.id}}">
-            <div class="image-recipe">
+            <div class="edit-admin">
+                <h2>Receita: {{recipe.title}}</h2>
+                <a href="/admin/receipts/{{recipe.id}}/edit">Editar receita</a>
+            </div>
+
+            <div class="image-recipe-admin">
                 <img src="{{recipe.image}}" alt="image of {{recipe.title}}">
             </div>
 

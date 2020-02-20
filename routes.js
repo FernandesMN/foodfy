@@ -14,9 +14,13 @@ routes.get("/recipe", website.recipe);
 routes.get("/admin/receipts", admin.receipts);
 routes.get("/admin/receipts/create", admin.create);
 routes.get("/admin/receipts/:id", admin.show);
-routes.get("/admin/receipts/:id/edit");
+routes.get("/admin/receipts/:id/edit", admin.edit);
 routes.post("/admin/receipts", admin.post);
 routes.put("/admin/receipts", admin.put);
 routes.delete("/admin/receipts", admin.delete);
+
+routes.use(function(req,res) {
+    return res.status(404).render("not-found");
+});
 
 module.exports = routes;
