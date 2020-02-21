@@ -1,1 +1,13 @@
 {% extends 'admin/layout.njk' %}
+
+{% block content %}
+    <div class="edit-content">
+        <div class="edit-head">
+            <form method="POST" action="/admin/receipts">
+                {% include 'admin/fields.njk' %}        
+            </form>
+        </div>
+    </div>
+
+    {% include 'admin/addFields.njk' %}
+{% endblock %}

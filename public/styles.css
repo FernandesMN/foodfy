@@ -257,8 +257,34 @@ footer .rights-reserved {
 }
 
 /*========== ADMIN ==========*/
+.recipe-manager {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    width: 850px;
+    position: relative;
+    left: 16%;
+    top: 32px;
+}
+
+.recipe-manager p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.recipe-manager a {
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 
 /*---header---*/
+.admin-manager {
+    position: relative;
+    left: 5%;
+    width: 850px;
+}
+
 .header-admin {
     background-color: #111111;
     padding-bottom: 12px;
@@ -266,10 +292,12 @@ footer .rights-reserved {
 
 /*---card---*/
 .cards-admin {
+    position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 940px;
-    margin-left: 16%;
+    left: 16%;
+    top: 86px;
 }
 
 .card-admin {
@@ -285,7 +313,7 @@ footer .rights-reserved {
     border-radius: 8px;
 }
 
-.card-content-admin a {
+.card-content-admin a, .edit-form button {
     text-decoration: none;
     color: #6558C3;
     font-size: 14px;
@@ -319,4 +347,83 @@ footer .rights-reserved {
     text-align: center;
     font-weight: bold;
     border-radius: 4px;
+}
+
+/*---edit---*/
+.edit-content {
+    width: 70%;
+    position: relative;
+    top: 32px;
+    left: 15%;
+}
+
+.edit-head .button-save, .edit-head .button-delete, .recipe-manager a {
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: #6558C3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-head .button-delete {
+    background-color: #DC4747;
+}
+
+.edit-head .button-delete {
+    position: absolute;
+    top: 60px;
+    right: 130px;
+}
+
+.edit-head .button-save {
+    position: absolute;
+    right: 0;
+}
+
+.edit-form {
+    margin-top: 32px;
+    padding-top: 32px;
+}
+
+.edit-form div {
+    margin-top: 8px;
+
+}
+
+.edit-form div h2 {
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.edit-form div input {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 16px 0;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.edit-form div textarea {
+    border: 1px solid #DDDDDD;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.edit-form #ingredients, .edit-form #preparation{
+    margin-bottom: 4px;
+}
+
+.edit-form #edit-image {
+    margin-bottom: 16px;
+}
+
+.edit-form #edit-information {
+    margin-bottom: 32px;
+}
+
+.edit-form button {
+    background: white;
+    cursor: pointer;
 }

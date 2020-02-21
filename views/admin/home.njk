@@ -5,22 +5,28 @@
 {% endblock %}
 
 {% block content %}
-    <h2 class="title-recipes">Gerenciar receitas</h2>
-    <section class="cards-admin">
-        {% for recipe in receipts %}
-            <div class="card-admin" id="burger.png">
-                <div class="card-image-admin">
-                    <img src="{{recipe.image}}" alt="image of {{recipe.title}}">
-                </div>
+    <div class="admin-manager">
+        <section class="recipe-manager">
+            <p>Gerenciar receitas</p>
+            <a href="/admin/receipts/create">Criar Nova receita</a>
+        </section>
 
-                <div class="card-content-admin">
-                    <h2>{{recipe.title}}</h2>
-                    <p>por {{recipe.author}}</p>
-                    <a href="/admin/receipts/{{recipe.id}}">Visualizar</a>
+        <section class="cards-admin">
+            {% for recipe in receipts %}
+                <div class="card-admin" id="burger.png">
+                    <div class="card-image-admin">
+                        <img src="{{recipe.image}}" alt="image of {{recipe.title}}">
+                    </div>
+
+                    <div class="card-content-admin">
+                        <h2>{{recipe.title}}</h2>
+                        <p>por {{recipe.author}}</p>
+                        <a href="/admin/receipts/{{recipe.id}}">Visualizar</a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </section>
+            {% endfor %}
+        </section>
+    </div>
 {% endblock %}
 
 {% block footer %}{% endblock %}
