@@ -49,7 +49,7 @@
         <div class="preparation">
             {% if recipe.preparation != "" %}
                 {% for step in recipe.preparation %}
-                    <input type="text" name="ingredients[]" value="{{step}}">
+                    <input type="text" name="preparation[]" value="{{step}}">
                 {% endfor %}
             {% endif %}        
             <input type="text" name="preparation[]" placeholder="Novo passo">
@@ -62,7 +62,7 @@
         
         <textarea 
             name="information"
-            id="" cols="30" 
+            cols="30" 
             rows="10">
             {% if recipe.information != "" %}
                 {{recipe.information}}

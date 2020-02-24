@@ -1,26 +1,5 @@
 module.exports = [
     {
-      id: 4,
-      image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/lasanha.png',
-      title: "Lasanha mac n' cheese",
-      author: 'Juliano Vieira',
-      ingredients: [
-        'massa pronta de lasanha',
-        '400 g de presunto',
-        '400 g de mussarela ralada',
-        '2 copos de requeijão',
-        '150 g de mussarela para gratinar'
-      ],
-      preparation: [
-        'Em uma panela, coloque a manteiga para derreter.',
-        'Acrescente a farinha de trigo e misture bem com auxílio de um fouet.',
-        'Adicione o leite e misture até formar um creme homogêneo.',
-        'Tempere com sal, pimenta e noz-moscada a gosto.',
-        'Desligue o fogo e acrescente o creme de leite; misture bem e reserve.'
-      ],
-      information: 'Recheie a lasanha com o que preferir.'
-    },
-    {
       id: 5,
       image: 'https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/macarrao.png',
       title: 'Espaguete ao alho',

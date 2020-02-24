@@ -58,7 +58,7 @@ exports.post = function(req,res) {
     const lastRecipe = data.receipts[data.receipts.length - 1];
     
     if(lastRecipe) {
-        id = lastRecipe.id + 1;
+        id = Number(lastRecipe.id) + 1;
     }
 
     let { author, title, image, ingredients, preparation, information } = req.body;
@@ -87,7 +87,7 @@ exports.put = function(req,res) {
 
     const foundRecipe = data.receipts.find(function(recipe, foundIndex) {
         if (id == recipe.id) {
-            index = foundIndex;
+            index = Number(foundIndex);
             return true;
         }
     })
