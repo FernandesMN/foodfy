@@ -16,11 +16,15 @@ exports.create = function(req,res) {
 exports.show = function(req,res) {
     const { id } = req.params;
 
-    const foundRecipe = receipts.find(function(recipe) {
+    const foundRecipe = data.receipts.find(function(recipe) {
         return id == recipe.id;
     });
 
-    return res.render("admin/recipe", {recipe: foundRecipe});
+    const recipe = {
+        ...foundRecipe
+    }
+
+    return res.render("admin/recipe", {recipe});
 };
 
 //Edit recipe (Mostrar formulário de edição de uma receita)
@@ -44,8 +48,6 @@ exports.edit = function(req,res) {
 exports.post = function(req,res) {
     const keys = Object.keys(req.body);
 
-    console.log(keys);
-
     for (key of keys) {
         if(req.body[key] == "") {
             return res.send("Please, fill all fields.");
@@ -54,15 +56,22 @@ exports.post = function(req,res) {
 
     let id = 1;
     const lastRecipe = data.receipts[data.receipts.length - 1];
-
+    
     if(lastRecipe) {
         id = lastRecipe.id + 1;
     }
 
-    const recipe = {
+    let { author, title, image, ingredients, preparation, information } = req.body;
+
+    data.receipts.push({
         id,
-        ...req.body
-    }
+        image,
+        title,
+        author,
+        ingredients,
+        preparation,
+        information
+    });
 
     fs.writeFile("data.json", JSON.stringify(data,null,2), function(err) {
         if(err) return res.send("write file error.");
@@ -88,7 +97,7 @@ exports.put = function(req,res) {
         ...req.body,
     }
 
-    data.receipts[foundIndex] = recipe;
+    data.receipts[index] = recipe;
 
     fs.writeFile("data.json", JSON.stringify(data,null,2), function(err) {
         if (err) return res.send("write file error.");

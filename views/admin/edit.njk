@@ -10,9 +10,9 @@
                 <button type="submit" class="button-delete">Deletar</button>        
             </form>
 
-            <form method="POST" action="/admin/receipts?_mehtod=PUT">
-                <input type="hidden" name="id" value="{{recipe.id}}">
+            <form method="POST" action="/admin/receipts?_method=PUT">
                 {% include 'admin/fields.njk' %}
+                <input type="hidden" name="id" value="{{recipe.id}}">
             </form>
         </div>
     </div>

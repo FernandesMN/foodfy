@@ -1,8 +1,8 @@
-const receipts = require('../data');
+const data = require("../data.json");
 
 //Home
 exports.home = function(req,res) {
-    return res.render("website/home", {receipts});
+    return res.render("website/home", {receipts: data.receipts});
 };
 
 //About
@@ -12,14 +12,14 @@ exports.about = function(req,res) {
 
 //Receipts
 exports.receipts = function(req,res) {
-    return res.render("website/receipts", {receipts});
+    return res.render("website/receipts", {receipts: data.receipts});
 };
 
 //Recipe
 exports.recipe = function(req,res) {
     const id = req.query.id;
 
-    const recipe = receipts.find(function(recipe) {
+    const recipe = data.receipts.find(function(recipe) {
         return id == recipe.id;
     });
 
