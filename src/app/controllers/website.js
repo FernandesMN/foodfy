@@ -1,4 +1,4 @@
-const data = require("../data.json");
+const data = require("../../../data.json");
 
 //Home
 exports.home = function(req,res) {
@@ -28,4 +28,9 @@ exports.recipe = function(req,res) {
     }
 
     return res.render("website/recipe", {recipe});
+};
+
+//chefs
+exports.chefs = function(req,res) {
+    return res.render("website/chefs");
 };

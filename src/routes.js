@@ -1,7 +1,6 @@
 const express = require('express');
-const receipts = require('./data');
-const website = require('./controllers/website');
-const admin = require('./controllers/admin');
+const website = require('../src/app/controllers/website');
+const admin = require('../src/app/controllers/admin');
 const routes = express.Router();
 
 //Website routes
@@ -9,6 +8,7 @@ routes.get("/", website.home);
 routes.get("/about", website.about);
 routes.get("/receipts", website.receipts);
 routes.get("/recipe", website.recipe);
+routes.get("/chefs", website.chefs);
 
 //Admin routes
 routes.get("/admin/receipts", admin.receipts);

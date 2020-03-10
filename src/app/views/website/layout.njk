@@ -20,7 +20,20 @@
                 <div class="links">
                     <a href="/about">Sobre</a>
                     <a href="/receipts">Receitas</a>
+                    <a href="/chefs">Chefs</a>
                 </div>
+
+                {% block search %}
+                    <div class="search">
+                        <input 
+                            type="text"
+                            name="search"
+                            placeholder="Buscar uma receita"
+                        >
+
+                        <button type="submit">Buscar</button>
+                    </div>
+                {% endblock %}
             </header>
         {% endblock %}
 

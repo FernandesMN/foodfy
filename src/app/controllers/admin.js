@@ -1,6 +1,5 @@
 const fs = require('fs');
-const data = require('../data.json');
-const receipts = require('../data');
+const data = require('../../../data.json');
 
 //Listing receipts (Mostrar a lista de receitas)
 exports.receipts = function(req,res) {
