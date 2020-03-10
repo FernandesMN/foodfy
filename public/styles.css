@@ -312,8 +312,28 @@ footer .rights-reserved {
 }
 
 .header-admin {
+    display: grid;
+    grid-template-columns: 200px 1fr;
     background-color: #111111;
     padding-bottom: 12px;
+}
+
+.header-admin .image-logo {
+    margin-left: 100%;
+}
+
+.header-admin .links-admin {
+    margin-top: 20px;
+    margin-left: 15%;
+}
+
+.header-admin .links-admin a{
+    font-size: 15px;
+    text-align: left;
+    color: #999999;
+    text-decoration: none;
+    margin-right: 8px;
+    font-weight: bold;
 }
 
 /*---card---*/

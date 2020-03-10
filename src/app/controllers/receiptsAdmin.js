@@ -3,12 +3,12 @@ const data = require('../../../data.json');
 
 //Listing receipts (Mostrar a lista de receitas)
 exports.receipts = function(req,res) {
-    return res.render("admin/home", {receipts: data.receipts});
+    return res.render("admin/receipts/home", {receipts: data.receipts});
 };
 
 //Create recipe (Mostrar o formulário de nova receita)
 exports.create = function(req,res) {
-    return res.render("admin/create");
+    return res.render("admin/receipts/create");
 };
 
 //Show recipe (Exibir detalhes de uma receita)
@@ -23,7 +23,7 @@ exports.show = function(req,res) {
         ...foundRecipe
     }
 
-    return res.render("admin/recipe", {recipe});
+    return res.render("admin/receipts/recipe", {recipe});
 };
 
 //Edit recipe (Mostrar formulário de edição de uma receita)
@@ -40,7 +40,7 @@ exports.edit = function(req,res) {
         ...foundRecipe
     }
 
-    return res.render("admin/edit", {recipe});
+    return res.render("admin/receipts/edit", {recipe});
 };
 
 //New recipe
@@ -75,7 +75,7 @@ exports.post = function(req,res) {
     fs.writeFile("data.json", JSON.stringify(data,null,2), function(err) {
         if(err) return res.send("write file error.");
 
-        return res.redirect("/admin/receipts");
+        return res.redirect("/admin/receipts/receipts");
     });
 };
 
