@@ -20,7 +20,13 @@
 
                     <div class="card-content-admin">
                         <h2>{{recipe.title}}</h2>
-                        <p>por {{recipe.author}}</p>
+                    <p>por 
+                        {% for chef in chefsOptions %}
+                            {% if chef.id == recipe.chef_id%}
+                                {{chef.name}}
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                         <a href="/admin/receipts/{{recipe.id}}">Visualizar</a>
                     </div>
                 </div>

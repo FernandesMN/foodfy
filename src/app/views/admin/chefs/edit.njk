@@ -6,13 +6,13 @@
             <h2>Editando receita</h2>
             
             <form method="POST" action="/admin/chefs?_method=DELETE">
-                <input type="hidden" name="id" value="{{recipe.id}}">
+                <input type="hidden" name="id" value="{{chef.id}}">
                 <button type="submit" class="button-delete">Deletar</button>        
             </form>
 
             <form method="POST" action="/admin/chefs?_method=PUT">
                 {% include 'admin/chefs/fields.njk' %}
-                <input type="hidden" name="id" value="{{recipe.id}}">
+                <input type="hidden" name="id" value="{{chef.id}}">
             </form>
         </div>
     </div>

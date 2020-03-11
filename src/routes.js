@@ -25,6 +25,13 @@ routes.get("/admin/chefs", chefsAdmin.chefs);
 routes.get("/admin/chefs/create", chefsAdmin.create);
 routes.get("/admin/chefs/:id", chefsAdmin.show);
 routes.get("/admin/chefs/:id/edit", chefsAdmin.edit);
+routes.post("/admin/chefs", chefsAdmin.post);
+routes.put("/admin/chefs", chefsAdmin.put);
+routes.delete("/admin/chefs", chefsAdmin.delete);
+
+routes.use(function(req,res) {
+    return res.redirect("/admin/receipts");
+});
 
 routes.use(function(req,res) {
     return res.status(404).render("not-found");

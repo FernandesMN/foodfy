@@ -18,16 +18,20 @@
 
             <div class="info-recipe">
                 <h2>{{recipe.title}}</h2>
-                <p>por {{recipe.author}}</p>
+                <p>por 
+                    {% for chef in chefsOptions %}
+                        {% if chef.id == recipe.chef_id%}
+                            {{chef.name}}
+                        {% endif %}
+                    {% endfor %}
+                 </p>
             </div>
 
             <div class="ingredient-recipe active">
                 <h2>Ingredientes <a class="to_hide-ingredient">ESCONDER</a></h2>
                 
                 <ul>
-                    {% for ingredient in recipe.ingredients %}
-                        <li>{{ingredient}}</li>
-                    {% endfor %}
+                    <li>{{recipe.ingredients}}</li>
                 </ul>
             </div>
             
@@ -35,9 +39,7 @@
                 <h2>Modo de preparo <a class="to_hide-preparation">ESCONDER</a></h2>
 
                 <ul>
-                    {% for step in recipe.preparation %}
-                        <li>{{step}}</li>
-                    {% endfor %}
+                    <li>{{recipe.preparation}}</li>
                 </ul>
             </div>
 
