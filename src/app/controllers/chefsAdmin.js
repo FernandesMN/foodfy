@@ -1,4 +1,5 @@
 const Chef = require('../models/Chef');
+const Recipe = require('../models/Recipe');
 
 module.exports = {
     chefs(req,res) {
@@ -16,7 +17,9 @@ module.exports = {
 
         Chef.find(id, function(chef) {
             Chef.chefReceipts(id, function(receipts) {
-                return res.render("admin/chefs/detail", {chef, receipts, total_receipts: receipts.length});
+                Recipe.chefSelectOptions(function(options) {
+                    return res.render("admin/chefs/detail", {chef, receipts, total_receipts: receipts.length, chefsOptions: options});
+                })
             })
         });
     },

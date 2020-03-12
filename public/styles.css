@@ -385,7 +385,8 @@ footer .rights-reserved {
 }
 
 .card .edit-admin a,
-.search button[type="submit"] {
+.search button[type="submit"],
+.chef-header a {
     padding: 12px 16px;
     background: #6558C3;
     color: white;
@@ -404,7 +405,10 @@ footer .rights-reserved {
     left: 15%;
 }
 
-.edit-head .button-save, .edit-head .button-delete, .recipe-manager a {
+.edit-head .button-save,
+.edit-head .button-delete,
+.recipe-manager a,
+.chef-header-admin a {
     border-radius: 4px;
     padding: 8px 16px;
     background-color: #6558C3;
@@ -476,3 +480,83 @@ footer .rights-reserved {
 }
 
 /*---FASE DE PERSISTÊNCIA DE DADOS---*/
+.cards-admin.chef-admin {
+    margin-top: 64px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 1000px;
+}
+
+.card-admin.chef-admin {
+    grid-template-columns: 80px 1fr;
+    width: 250px;
+}
+
+.chef-header-admin {
+    width: 940px;
+    margin-left: 16%;
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    position: relative;
+}
+
+.chef-header-admin a{
+    text-align: center;
+    margin: 0;
+    text-decoration: none;
+    width: 130px;
+    position: absolute;
+    left: 86%;
+}
+
+.card-image-admin.chef-image img{
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
+}
+
+.card-admin.chef-admin .card-content-admin.chef-content {
+    margin-top: 8px;
+}
+
+/*---Chef exibition---*/
+.chef-exibition-admin {
+    width: 940px;
+    margin-left: 15%;
+    margin-top: 32px;
+}
+
+.chef-header {
+    display: grid;
+    grid-template-columns: 700px 1fr;
+}
+
+.chef-presentation {
+    margin-top: 32px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.chef-presentation p{
+    font-size: 20px;
+    color: #777777;
+}
+
+.chef-presentation img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 16px;
+}
+
+.cards-recipe-chef {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0%;
+    margin-top: 16px;
+}
+
+.cards-admin.cards-chef-admin {
+    top: 85%;
+    margin-bottom: 32px;
+}

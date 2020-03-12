@@ -1,4 +1,5 @@
 const data = require("../../../data.json");
+const Chef = require('../models/Chef');
 
 //Home
 exports.home = function(req,res) {
@@ -32,5 +33,7 @@ exports.recipe = function(req,res) {
 
 //chefs
 exports.chefs = function(req,res) {
-    return res.render("website/chefs");
+    Chef.all(function(chefs) {
+        return res.render("website/chefs", {chefs});
+    });
 };
