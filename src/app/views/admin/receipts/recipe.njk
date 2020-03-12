@@ -31,7 +31,9 @@
                 <h2>Ingredientes <a class="to_hide-ingredient">ESCONDER</a></h2>
                 
                 <ul>
-                    <li>{{recipe.ingredients}}</li>
+                    {% for ingredient in recipe.ingredients %}
+                        <li>{{ingredient}}</li>
+                    {% endfor %}
                 </ul>
             </div>
             
@@ -39,7 +41,9 @@
                 <h2>Modo de preparo <a class="to_hide-preparation">ESCONDER</a></h2>
 
                 <ul>
-                    <li>{{recipe.preparation}}</li>
+                    {% for step in recipe.preparation %}
+                        <li>{{step}}</li>
+                    {% endfor %}
                 </ul>
             </div>
 

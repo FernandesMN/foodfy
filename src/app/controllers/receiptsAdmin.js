@@ -1,6 +1,7 @@
 const fs = require('fs');
 const data = require('../../../data.json');
 const Recipe = require('../models/Recipe')
+const { objectToString } = require('../../lib/utils');
 
 module.exports = {
     //Listing receipts (Mostrar a lista de receitas)
@@ -25,6 +26,8 @@ module.exports = {
 
         Recipe.find(id, function(recipe) {
             Recipe.chefSelectOptions(function(options){
+                recipe.ingredients = objectToString(recipe.ingredients);
+                recipe.preparation = objectToString(recipe.preparation);
                 return res.render("admin/receipts/recipe", {recipe, chefsOptions: options});
             })
         });
@@ -36,6 +39,8 @@ module.exports = {
 
         Recipe.find(id, function(recipe) {
             Recipe.chefSelectOptions(function(options) {
+                recipe.ingredients = objectToString(recipe.ingredients);
+                recipe.preparation = objectToString(recipe.preparation);
                 return res.render("admin/receipts/edit", {recipe, chefsOptions: options});
             });
         });

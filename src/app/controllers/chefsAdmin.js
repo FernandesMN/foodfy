@@ -16,7 +16,7 @@ module.exports = {
 
         Chef.find(id, function(chef) {
             Chef.chefReceipts(id, function(receipts) {
-                return res.render("admin/chefs/detail", {chef, receipts});
+                return res.render("admin/chefs/detail", {chef, receipts, total_receipts: receipts.length});
             })
         });
     },
