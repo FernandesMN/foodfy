@@ -2,8 +2,19 @@ const db = require('../../config/db');
 const { date } = require('../../lib/utils');
 
 module.exports = {
-    all(callback) {
-        db.query(`SELECT * FROM receipts`, function(err, results) {
+    allReceipts(filter, callback) {
+        let query = "",
+            filteredQuery = ""
+
+        if (filter) {
+            filteredQuery = `WHERE receipts.title ILIKE '%${filter}%'`
+        }
+
+        query = `
+            SELECT receipts.* FROM receipts ${filteredQuery}
+        `
+
+        db.query(query, function(err, results) {
             if (err) throw `Database: ${err}`;
 
             callback(results.rows);

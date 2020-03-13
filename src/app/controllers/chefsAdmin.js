@@ -3,7 +3,7 @@ const Recipe = require('../models/Recipe');
 
 module.exports = {
     chefs(req,res) {
-        Chef.all(function(chefs) {
+        Chef.allChefs(function(chefs) {
             return res.render("admin/chefs/home", {chefs});
         });
     },

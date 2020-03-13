@@ -2,7 +2,7 @@ const db = require('../../config/db');
 const { date } = require('../../lib/utils');
 
 module.exports = {
-    all(callback) {
+    allChefs(callback) {
         query = `
             SELECT chefs.*, count(receipts) AS total_receipts
             FROM chefs 

@@ -24,15 +24,18 @@
                 </div>
 
                 {% block search %}
-                    <div class="search">
-                        <input 
-                            type="text"
-                            name="search"
-                            placeholder="Buscar uma receita"
-                        >
+                    <form  method="GET" action="/receipts">
+                        <div class="search">
+                            <input 
+                                type="text"
+                                name="filter"
+                                placeholder="Buscar uma receita"
+                                value="{{filter}}"
+                            >
 
-                        <button type="submit">Buscar</button>
-                    </div>
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
                 {% endblock %}
             </header>
         {% endblock %}

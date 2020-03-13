@@ -1,9 +1,15 @@
-const data = require("../../../data.json");
 const Chef = require('../models/Chef');
+const Recipe = require('../models/Recipe');
 
 //Home
 exports.home = function(req,res) {
-    return res.render("website/home", {receipts: data.receipts});
+    const { filter } = req.query;
+
+    Recipe.allReceipts(filter, function(receipts) {
+        Recipe.chefSelectOptions(function(options) {
+            return res.render("website/home", {receipts, chefsOptions: options, filter});
+        });
+    });
 };
 
 //About
@@ -13,27 +19,27 @@ exports.about = function(req,res) {
 
 //Receipts
 exports.receipts = function(req,res) {
-    return res.render("website/receipts", {receipts: data.receipts});
+    const { filter } = req.query;
+
+    Recipe.allReceipts(filter, function(receipts) {
+        Recipe.chefSelectOptions(function(options) {
+            return res.render("website/receipts", {receipts, filter, chefsOptions: options});
+        });
+    });
 };
 
 //Recipe
 exports.recipe = function(req,res) {
-    const id = req.query.id;
+    const { id } = req.query;
 
-    const recipe = data.receipts.find(function(recipe) {
-        return id == recipe.id;
+    Recipe.find(id, function(recipe) {
+        return res.render("website/recipe", {recipe});
     });
-
-    if(!recipe) {
-        return res.send('Not found');
-    }
-
-    return res.render("website/recipe", {recipe});
 };
 
 //chefs
 exports.chefs = function(req,res) {
-    Chef.all(function(chefs) {
+    Chef.allChefs(function(chefs) {
         return res.render("website/chefs", {chefs});
     });
 };

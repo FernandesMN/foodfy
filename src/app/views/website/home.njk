@@ -29,11 +29,15 @@
 
                 <div class="card-content">
                     <h2>{{recipe.title}}</h2>
-                    <p>por {{recipe.author}}</p>
+                    <p>por 
+                        {% for chef in chefsOptions %}
+                            {% if chef.id == recipe.chef_id%}
+                                {{chef.name}}
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                 </div>
             </div>
         {% endfor %}
     </section>
 {% endblock %}
-
-{% block footer %}{% endblock %}
