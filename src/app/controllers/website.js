@@ -3,7 +3,7 @@ const Recipe = require('../models/Recipe');
 
 //Home
 exports.home = function(req,res) {
-    const { filter } = req.query;
+    let { filter } = req.query;
 
     Recipe.allReceipts(filter, function(receipts) {
         Recipe.chefSelectOptions(function(options) {
@@ -19,7 +19,7 @@ exports.about = function(req,res) {
 
 //Receipts
 exports.receipts = function(req,res) {
-    const { filter } = req.query;
+    let { filter } = req.query
 
     Recipe.allReceipts(filter, function(receipts) {
         Recipe.chefSelectOptions(function(options) {

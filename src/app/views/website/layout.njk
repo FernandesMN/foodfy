@@ -40,14 +40,20 @@
             </header>
         {% endblock %}
 
-        {% block content %}{% endblock %}
-        
-        {% block footer %}
-            <footer>
-                <div class="rights-reserved">
-                    <p>Todos os direitos resevados, receitas Foodfy</p>
-                </div>
-            </footer>
-        {% endblock %}
+        <div class="content-and-footer">
+            <div class="content-position">
+                {% block content %}{% endblock %}
+            </div>
+            
+            <div class="footer-position">
+                {% block footer %}
+                    <footer>
+                        <div class="rights-reserved">
+                            <p>Todos os direitos resevados, receitas Foodfy</p>
+                        </div>
+                    </footer>
+                {% endblock %}
+            </div>
+        </div>
     </body>
 </html>

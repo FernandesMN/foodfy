@@ -6,6 +6,9 @@ module.exports = {
         let query = "",
             filteredQuery = ""
 
+        console.log(`Filtro: ${filter}`);
+        console.log(`Callback: ${callback}`);
+
         if (filter) {
             filteredQuery = `WHERE receipts.title ILIKE '%${filter}%'`
         }

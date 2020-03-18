@@ -7,8 +7,21 @@
     border: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
+.content-and-footer {
+    min-height: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+/*--- Home ---*/
+.content-home {
+    position: relative;
 }
 
 /*=== HEADER ===*/
@@ -182,14 +195,23 @@ body {
 }
 
 /*=== FOOTER ===*/
+.content-and-footer {
+    position: relative;
+}
+
+.content-position {
+    padding-bottom: 100px;
+}
+
+.footer-position {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 footer .rights-reserved {
-    display: grid;
-    grid-template-columns: 1fr;
     background: #EEEEEE;
     height: 62px;
-    margin-top: 50px;
-    position: relative;
-    bottom: 0;
 }
 
 .rights-reserved p {
