@@ -1,27 +1,32 @@
 const db = require('../../config/db');
 const { date } = require('../../lib/utils');
 
+function receiptsAndFilter(filter, callback) {
+    let query = "",
+    filteredQuery = ""
+
+    if (filter) {
+        filteredQuery = `WHERE receipts.title ILIKE '%${filter}%'`
+    }
+
+    query = `
+        SELECT receipts.* FROM receipts ${filteredQuery}
+    `
+
+    db.query(query, function(err, results) {
+        if (err) throw `Database: ${err}`;
+
+        callback(results.rows);
+    })
+}
+
 module.exports = {
-    allReceipts(filter, callback) {
-        let query = "",
-            filteredQuery = ""
+    allReceiptsHome(filter, callback) {
+        receiptsAndFilter(filter, callback);
+    },
 
-        console.log(`Filtro: ${filter}`);
-        console.log(`Callback: ${callback}`);
-
-        if (filter) {
-            filteredQuery = `WHERE receipts.title ILIKE '%${filter}%'`
-        }
-
-        query = `
-            SELECT receipts.* FROM receipts ${filteredQuery}
-        `
-
-        db.query(query, function(err, results) {
-            if (err) throw `Database: ${err}`;
-
-            callback(results.rows);
-        })
+    allReceiptsPage(filter, callback) {
+        receiptsAndFilter(filter, callback);
     },
 
     create(data, callback) {

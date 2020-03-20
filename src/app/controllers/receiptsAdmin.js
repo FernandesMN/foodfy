@@ -6,7 +6,9 @@ const { objectToString } = require('../../lib/utils');
 module.exports = {
     //Listing receipts (Mostrar a lista de receitas)
     receipts(req,res) {
-        Recipe.allReceipts(function(receipts) {
+        let { filter } = req.query;
+
+        Recipe.allReceiptsHome(filter, function(receipts) {
             Recipe.chefSelectOptions(function(options) {
                 return res.render("admin/receipts/home", {receipts, chefsOptions: options});
             });

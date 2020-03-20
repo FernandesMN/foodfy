@@ -5,9 +5,9 @@ const Recipe = require('../models/Recipe');
 exports.home = function(req,res) {
     let { filter } = req.query;
 
-    Recipe.allReceipts(filter, function(receipts) {
+    Recipe.allReceiptsHome(filter, function(receipts) {
         Recipe.chefSelectOptions(function(options) {
-            return res.render("website/home", {receipts, chefsOptions: options, filter});
+            return res.render("website/home", {receipts, chefsOptions: options});
         });
     });
 };
@@ -19,9 +19,9 @@ exports.about = function(req,res) {
 
 //Receipts
 exports.receipts = function(req,res) {
-    let { filter } = req.query
+    let { filter } = req.query;
 
-    Recipe.allReceipts(filter, function(receipts) {
+    Recipe.allReceiptsPage(filter, function(receipts) {
         Recipe.chefSelectOptions(function(options) {
             return res.render("website/receipts", {receipts, filter, chefsOptions: options});
         });
