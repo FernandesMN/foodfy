@@ -447,7 +447,7 @@ footer .rights-reserved {
 
 .edit-head .button-delete {
     position: absolute;
-    top: 60px;
+    top: 64px;
     right: 130px;
 }
 
@@ -503,7 +503,7 @@ footer .rights-reserved {
     cursor: pointer;
 }
 
-/*---FASE DE PERSISTÊNCIA DE DADOS---*/
+/*--- DATA PERSISTENCE PHASE ---*/
 .cards-admin.chef-admin {
     margin-top: 64px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -571,6 +571,8 @@ footer .rights-reserved {
     width: 200px;
     height: 200px;
     margin-bottom: 16px;
+
+    object-fit: cover;
 }
 
 .cards-recipe-chef {
@@ -583,4 +585,8 @@ footer .rights-reserved {
 .cards-admin.cards-chef-admin {
     top: 85%;
     margin-bottom: 32px;
+}
+
+.card-image-admin.chef-image img {
+    object-fit: cover;
 }

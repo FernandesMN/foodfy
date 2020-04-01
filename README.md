@@ -15,10 +15,10 @@ This project is also the result of the challenges delivered in the Bootcamp Laun
 # Home Foodfy
 ![](/readme_content/website_prints/chefs_foodfy.png)  
 
-#Home admin Foodfy
+# Home admin Foodfy
 ![](/readme_content/admin_prints/home_admin.png)  
 
-#Chefs admin Foodfy
+# Chefs admin Foodfy
 ![](/readme_content/admin_prints/chefs_admin.png)  
 
 ## Instalação

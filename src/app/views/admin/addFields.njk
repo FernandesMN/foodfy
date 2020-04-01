@@ -3,23 +3,23 @@
         const ingredients = document.querySelector("#ingredients");
         const fieldContainer = document.querySelectorAll(".ingredient");
 
-        const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+        const newField = document.createElement('input');
+        newField.setAttribute("type", "text");
+        newField.setAttribute("name", "ingredients[]");
+        newField.setAttribute("placeholder", "Ingrediente");
 
-        if(newField.children[0].value == "") return false;
-
-        newField.children[0].value = "";
         ingredients.appendChild(newField);
     };
 
     function addStep() {
         const preparation = document.querySelector("#preparation");
         const fieldContainer = document.querySelectorAll(".preparation");
+        
+        const newField = document.createElement('input');
+        newField.setAttribute("type", "text");
+        newField.setAttribute("name", "preparation[]");
+        newField.setAttribute("placeholder", "Novo passo");
 
-        const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
-
-        if(newField.children[0].value == "") return false;
-
-        newField.children[0].value = "";
         preparation.appendChild(newField);
     };
 
